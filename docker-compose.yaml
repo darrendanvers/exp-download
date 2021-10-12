@@ -3,12 +3,18 @@ services:
   ui:
     image: "blog.drmidnite/exp-download-ui:1.0"
     build:
-        context: ./exp-download-ui
+      context: ./exp-download-ui
     ports:
-        - "3000:3000"
+      - "3000:3000"
   api:
     image: "blog.drmidnite/exp-download-api:1.0"
     build:
-        context: ./exp-download-api
+      context: ./exp-download-api
     ports:
-        - "8080:8080"
+      - "8080:8080"
+  go-api:
+    image: "blog.drmidnite/exp-download-go:1.0"
+    build:
+      context: ./exp-download-go
+    ports:
+      - "8081:8081"  

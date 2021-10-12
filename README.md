@@ -11,14 +11,16 @@ a cleaner way of doing that.
 ## Running
 
 If you have Docker installed, you can start this application by running `docker-compose up`.
-This will build two containers and start them. It will use ports 3000 and 8080. If you 
+This will build two containers and start them. It will use ports 3000, 8080, and 8081. If you 
 open the address [http://localhost:3000](http://localhost:3000) in your browser, it will
-open up a page with a link that will initiate the download. The URI of the download
-was dynamically generated.
+open up a page with a couple of links that will initiate downloads. The URIs of the downloads
+were dynamically generated.
+
+Hit `^C` to shut the services down.
 
 ## Structure
 
-This repository contains two separate projects to build deployable artifacts. 
+This repository contains three separate projects to build deployable artifacts. 
 
 [exp-download-api](exp-download-api) contains a simple REST service that emulates
 generating a file for download.
@@ -28,6 +30,9 @@ button to start the download. There is an Nginx configuration here that will all
 serve up the site and act as a reverse proxy to the API service. It is written assuming
 you are using Docker Compose to run the application, but is easily modifiable for
 other congigurations.
+
+[exp-download-go](exp-download-go) contains a REST server witten in Go. I'm just beginning
+to learn Go, and this was a simple enough project to let me make something.
 
 This structure is overly-complicated for the scope of the test, but I chose to build it this
 way to more closely resemble the architecture of the application I was originally
