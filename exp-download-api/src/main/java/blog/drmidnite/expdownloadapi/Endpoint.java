@@ -20,8 +20,9 @@ public class Endpoint {
     // You can replace "test" with whatever.
     @GetMapping("/{id}/download.txt")
     public void doDownload(@PathVariable("id")String id, HttpServletResponse response) throws IOException {
-
+        
         response.getWriter().print("You requested resource ");
-        response.getWriter().println(id);
+        response.getWriter().print(id);
+        response.getWriter().println(" from the Java server.");
     }
 }
